@@ -19,7 +19,11 @@ export const Counter = observer(() => {
       >
         +
       </Markup.Button>
-      <div>{"count:  " + CounterStore.count}</div>
+      <div>
+        {CounterStore.total}
+        {/** Альтернативный вариант */}
+        {/* {"count:  " + CounterStore.count} */}
+      </div>
       <Markup.Button
         onClick={() => {
           CounterStore.decrement();

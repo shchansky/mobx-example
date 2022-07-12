@@ -4,21 +4,23 @@ import { todoStore } from "../../store";
 
 export const Todo = observer(() => {
 
- 
-
   return (
     <div>
+      <button onClick={()=>todoStore.fetchTodo()}>fetch todo</button>
       {todoStore.todos.map((todo) => (
         <div key={todo.id}>
           <input
             type="checkbox"
             checked={todo.completed}
-            onChange={() => {todoStore.completeTodo(todo.id)}}
+            onChange={() => todoStore.completeTodo(todo.id)}
           />
           {todo.title}
-          <button onClick={()=>{todoStore.removeTodo(todo.id)}}> Dell todo </button>
+          <button onClick={()=>todoStore.removeTodo(todo.id)}> Dell todo </button>
         </div>
       ))}
     </div>
   );
 });
+
+
+
